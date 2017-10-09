@@ -11,8 +11,8 @@ int n=0;
 
 //memory allocation
 char*ptr = malloc(sizeof(char)*100);
-*argv = char**malloc(sizeof(char*)*100);
-*argv[n] = char*malloc(sizeof(char)*100);
+*argv = (char**)malloc(sizeof(char*)*100);
+*argv[n] = (char*)malloc(sizeof(char)*100);
 
 
 //arguments
@@ -26,12 +26,12 @@ return;
 while(cmd!=NULL)
 {
 strcpy((*argv)[n], cmd); ++n;
-*argv[n] = char*malloc(sizeof(char)*100);
+*argv[n] = (char*)malloc(sizeof(char)*100);
 cmd = strtok(NULL, "' ', \n, \t");
 
 *argc = n;
 
 //free
-char free(ptr);
+free(ptr);
 
 }
